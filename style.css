@@ -1,0 +1,87 @@
+/* Additional custom styles beyond Tailwind */
+
+/* Smooth transitions for menu items */
+.menu-item {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dish-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Custom scrollbar for webkit */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d4a574;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b8935f;
+}
+
+/* Selection color */
+::selection {
+    background-color: #d4a574;
+    color: white;
+}
+
+/* Focus visible styles for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 2px solid #d2691e;
+    outline-offset: 2px;
+}
+
+/* Image loading placeholder */
+img {
+    background-color: #f3f4f6;
+}
+
+/* Prevent layout shift */
+.dish-image {
+    aspect-ratio: 1;
+}
+
+/* Animation for modal */
+#reservation-modal > div:nth-child(2) {
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Responsive typography adjustments */
+@media (max-width: 640px) {
+    .font-serif {
+        letter-spacing: -0.02em;
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, footer, #reservation-modal, button {
+        display: none;
+    }
+    
+    section {
+        page-break-inside: avoid;
+    }
+}

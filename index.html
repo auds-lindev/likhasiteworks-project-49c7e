@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savory & Stone | Fine Dining Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8B4513;
+            --secondary: #D2691E;
+            --accent: #F4A460;
+            --dark: #1a1a1a;
+            --light: #faf9f6;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+        }
+        
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+        }
+        
+        .menu-tab {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .menu-tab.active {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .menu-tab:hover:not(.active) {
+            color: var(--secondary);
+        }
+        
+        .menu-item {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .dish-image {
+            transition: transform 0.3s ease;
+        }
+        
+        .dish-card:hover .dish-image {
+            transform: scale(1.05);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(139, 69, 19, 0.4);
+        }
+        
+        .nav-scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-scrolled .nav-link {
+            color: var(--dark);
+        }
+        
+        .nav-scrolled .logo-text {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="logo-text text-2xl font-serif font-bold text-white tracking-wider flex items-center gap-2">
+                <i data-lucide="utensils" class="w-6 h-6"></i>
+                Savory & Stone
+            </a>
+            
+<div class="hidden md:flex items-center gap-8">
+                <a href="#about" class="nav-link text-white/90 hover:text-white font-medium transition-colors">About</a>
+                <a href="#featured" class="nav-link text-white/90 hover:text-white font-medium transition-colors">Featured</a>
+                <a href="#menu" class="nav-link text-white/90 hover:text-white font-medium transition-colors">Menu</a>
+                <a href="#testimonials" class="nav-link text-white/90 hover:text-white font-medium transition-colors">Reviews</a>
+                <button onclick="openReservationModal()" class="bg-white text-amber-900 px-6 py-2 rounded-full font-medium hover:bg-amber-50 transition-colors">
+                    Book a Table
+                </button>
+            </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
